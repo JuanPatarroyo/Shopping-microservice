@@ -17,6 +17,10 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  *
@@ -24,6 +28,8 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "producto")
+@Data
+@AllArgsConstructor @NoArgsConstructor @Builder
 public class Product {
 
     @Id
@@ -38,6 +44,6 @@ public class Product {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "category_id")
     private Category category;
 }

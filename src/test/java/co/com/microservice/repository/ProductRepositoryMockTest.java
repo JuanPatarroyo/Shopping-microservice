@@ -27,11 +27,11 @@ public class ProductRepositoryMockTest {
     @Test
     public void whenFindByCategoryThenReturnListProduct() {
         Product product = Product.builder()
-                .name("computer")
+                .name("Computer")
                 .category(Category.builder().id(1L).build())
-                .description("")
+                .description("Computador de escritorio gaming")
                 .stock(Double.parseDouble("10"))
-                .price(Double.parseDouble("30000"))
+                .price(Double.parseDouble("350.00"))
                 .status("A")
                 .createdAt(new Date()).build();
         repository.save(product);
